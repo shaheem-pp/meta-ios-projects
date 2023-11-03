@@ -52,13 +52,31 @@ print("Division result: \(divisionResult)")
 multiply()
 
 
-var goldBars = 0
+var goldBars1 = 0
 func unlockTreasureChest(inventory: Int) -> Int {
-  inventory + 100
+    inventory + 100
 }
-goldBars = unlockTreasureChest(inventory: goldBars)
+goldBars1 = unlockTreasureChest(inventory: goldBars1)
+print(goldBars1)
+goldBars1 = unlockTreasureChest(inventory: goldBars1)
+print(goldBars1)
+goldBars1 = unlockTreasureChest(inventory: goldBars1)
+print(goldBars1)
+print()
+print()
+
+
+var goldBars = 0
+func incrementInventory(_ inventory: inout Int, by amount: Int = 100) {
+    inventory += amount
+}
+incrementInventory(&goldBars)
 print(goldBars)
-goldBars = unlockTreasureChest(inventory: goldBars)
+incrementInventory(&goldBars)
 print(goldBars)
-goldBars = unlockTreasureChest(inventory: goldBars)
+incrementInventory(&goldBars)
+print(goldBars)
+incrementInventory(&goldBars, by: 300)
+print(goldBars)
+incrementInventory(&goldBars, by: 50)
 print(goldBars)
