@@ -31,7 +31,6 @@ struct FormView: View {
                     Text(locationName)
                         .font(.headline)
                         .fontWeight(.bold)
-                        .foregroundColor(Color.black)
                         .multilineTextAlignment(.leading)
                     
                     Text(locationSubtitle)
