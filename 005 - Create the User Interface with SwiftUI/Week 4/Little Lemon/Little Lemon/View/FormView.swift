@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FormView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     
     @State private var fullName: String = ""
     @State private var phoneNumber: String = ""
@@ -110,8 +111,15 @@ struct FormView: View {
                             .cornerRadius(50)
                     }
                     .alert(isPresented: $showAlert) {
-                        Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                        Alert(
+                            title: Text(alertTitle),
+                            message: Text(alertMessage),
+                            dismissButton: .default(Text("OK")) {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        )
                     }
+
                     Spacer()
                 }
             }
